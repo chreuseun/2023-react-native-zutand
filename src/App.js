@@ -5,31 +5,18 @@
  * @format
  */
 
-import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import React, {useEffect} from 'react';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {PublicNavigation} from 'src/reactNavigation/public';
 
 const App = () => {
-  return (
-    <SafeAreaView style={{flex: 1}}>
-      <Text>THIS IS TEST</Text>
-    </SafeAreaView>
-  );
+  useEffect(() => {
+    if (__DEV__) {
+      console.log('--- APP IS MOUNTED');
+    }
+  }, []);
+
+  return <PublicNavigation />;
 };
 
 export default App;
