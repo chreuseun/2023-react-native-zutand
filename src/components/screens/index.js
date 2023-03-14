@@ -1,3 +1,4 @@
 import LoginScreen from './LoginScreen';
+import HomeScreen from './HomeScreen';
 
-export {LoginScreen};
+export {LoginScreen, HomeScreen};
