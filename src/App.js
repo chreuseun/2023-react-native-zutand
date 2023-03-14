@@ -5,21 +5,18 @@
  * @format
  */
 
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 
 import {PublicNavigation} from 'src/reactNavigation/public';
 import {PrivateNavigation} from 'src/reactNavigation/private';
+import {useAuthorizationState} from 'src/zustand';
 
 const App = () => {
-  const [isAuthorized, setIsAuthorized] = useState(false);
+  const isAuthorized = useAuthorizationState(state => state.isAuthorized);
 
   useEffect(() => {
     if (__DEV__) {
       console.log('--- APP IS MOUNTED');
-
-      setTimeout(() => {
-        setIsAuthorized(true);
-      }, 10000);
     }
   }, []);
 

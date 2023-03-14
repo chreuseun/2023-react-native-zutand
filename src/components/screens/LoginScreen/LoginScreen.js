@@ -9,11 +9,20 @@ import {
   ScrollView,
 } from 'react-native';
 
+import {useAuthorizationState} from 'src/zustand';
+
 const LoginScreen = () => {
+  const authorizationStates = useAuthorizationState(state => state);
+
+  const onPressLoginBtn = () => {
+    authorizationStates.updateIsAuthorized(true);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View>
         <ScrollView>
+          <Text>{JSON.stringify(authorizationStates, null, 4)}</Text>
           <Text style={styles.appTitle}>App Title</Text>
           <View>
             <View style={styles.inputContainer}>
@@ -28,7 +37,7 @@ const LoginScreen = () => {
             </View>
           </View>
           <View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onPressLoginBtn}>
               <View style={styles.loginButtonContainer}>
                 <Text style={styles.loginButtonText}>Login</Text>
               </View>
