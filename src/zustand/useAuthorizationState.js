@@ -7,7 +7,8 @@ const INITIAL_STATE = {
 
 const useAuthorizatonStore = create(set => ({
   ...INITIAL_STATE,
-  updateIsAuthorized: (bool = false) => set({isAuthorized: bool}),
+  updateIsAuthorized: bool => set({isAuthorized: !!bool}),
+  updateIsAuthorizing: bool => set({isAuthorizing: !!bool}),
   authorizationInitialState: () => set(INITIAL_STATE),
 }));
 
