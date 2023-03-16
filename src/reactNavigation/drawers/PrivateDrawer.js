@@ -21,7 +21,9 @@ const Drawer = createDrawerNavigator();
 const PrivateDrawer = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator drawerContent={PrivateDrawerItems}>
+      <Drawer.Navigator
+        drawerContent={PrivateDrawerItems}
+        screenOptions={{headerShown: false}}>
         <Drawer.Screen name={HOME_SCREEN} component={HomeScreen} />
         <Drawer.Screen name={ALERTS_SCREEN} component={AlertsScreen} />
         <Drawer.Screen name={DASHBOARD_SCREEN} component={DashboardScreen} />

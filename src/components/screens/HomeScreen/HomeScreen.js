@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
 
 import {
   Text,
@@ -6,12 +7,12 @@ import {
   StyleSheet,
   View,
   Button,
-  ScrollView,
   FlatList,
 } from 'react-native';
 import {useAuthorizationState, useTestState} from 'src/zustand';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   const [arrayOfLogs, setArrayOfLogs] = useState([]);
 
   const authorizationStates = useAuthorizationState(state => state);
@@ -40,6 +41,7 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.container}>
       <View style={{borderWidth: 2, borderColor: 'red', flex: 1}}>
         <Text>THIS IS HOME SCREEN</Text>
+        <Button onPress={() => navigation.toggleDrawer()} title={'toggle'} />
         <FlatList
           data={arrayOfLogs}
           renderItem={({item, index}) => (
