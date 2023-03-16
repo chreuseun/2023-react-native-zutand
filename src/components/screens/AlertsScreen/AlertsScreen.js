@@ -14,13 +14,13 @@ const AlertsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   mainContainer: {
     flex: 1,
     borderWidth: 5,
     borderColor: 'red',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

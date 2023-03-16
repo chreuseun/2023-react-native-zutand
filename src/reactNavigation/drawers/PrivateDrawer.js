@@ -1,5 +1,9 @@
 import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+
 import {createDrawerNavigator} from '@react-navigation/drawer';
+
+import PrivateDrawerItems from './drawerItems/PrivateDrawerItems';
 
 import {
   AlertsScreen,
@@ -16,11 +20,16 @@ const Drawer = createDrawerNavigator();
 
 const PrivateDrawer = () => {
   return (
-    <Drawer.Navigator backBehavior="none" initialRouteName={HOME_SCREEN}>
-      <Drawer.Screen name={HOME_SCREEN} component={HomeScreen} />
-      <Drawer.Screen name={DASHBOARD_SCREEN} component={DashboardScreen} />
-      <Drawer.Screen name={ALERTS_SCREEN} component={AlertsScreen} />
-    </Drawer.Navigator>
+    <NavigationContainer>
+      <Drawer.Navigator
+        backBehavior="none"
+        drawerContent={PrivateDrawerItems}
+        initialRouteName={HOME_SCREEN}>
+        <Drawer.Screen name={HOME_SCREEN} component={HomeScreen} />
+        <Drawer.Screen name={DASHBOARD_SCREEN} component={DashboardScreen} />
+        <Drawer.Screen name={ALERTS_SCREEN} component={AlertsScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 };
 
