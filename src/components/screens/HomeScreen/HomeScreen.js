@@ -24,13 +24,13 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
+      <View style={{borderWidth: 2, borderColor: 'red', flex: 1}}>
         <Text>THIS IS HOME SCREEN</Text>
         <Text>
           {JSON.stringify({authorizationStates, testStates}, null, 4)}
         </Text>
-        <Button title="LOGOUT" onPress={onLogout} />
       </View>
+      <Button title="LOGOUT" onPress={onLogout} />
     </SafeAreaView>
   );
 };
