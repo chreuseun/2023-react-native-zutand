@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React, {useEffect} from 'react';
 
 import {PublicNavigation} from 'src/reactNavigation/public';
@@ -26,7 +19,7 @@ const App = () => {
 
     setTimeout(() => {
       updateIsAuthorizing(false);
-    }, 5000);
+    }, 2000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
