@@ -1,22 +1,41 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
+import {useNavigation} from '@react-navigation/native';
 import {DrawerContentScrollView} from '@react-navigation/drawer';
+import {
+  HOME_SCREEN,
+  ALERTS_SCREEN,
+  DASHBOARD_SCREEN,
+} from 'src/constants/screenNames';
 
 const PrivateDrawerItems = props => {
+  const navigation = useNavigation();
+
+  const toHome = () => {
+    console.log('--- TEST');
+    navigation.navigate(HOME_SCREEN);
+  };
+  const toDashboard = () => {
+    navigation.navigate(DASHBOARD_SCREEN);
+  };
+  const toAlert = () => {
+    navigation.navigate(ALERTS_SCREEN);
+  };
+
   return (
     <DrawerContentScrollView {...props}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={toHome}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>Home</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={toDashboard}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>Dashboard</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={toAlert}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>Alert</Text>
         </View>

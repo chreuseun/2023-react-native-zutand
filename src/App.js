@@ -3,6 +3,8 @@ import 'react-native-gesture-handler';
 import React, {useEffect} from 'react';
 
 import {PublicNavigation} from 'src/reactNavigation/public';
+import {PrivateNavigation} from 'src/reactNavigation/private';
+
 import {useAuthorizationState} from 'src/zustand';
 import {SplashScreen} from 'src/components/screens';
 import {PrivateDrawer} from 'src/reactNavigation/drawers';
@@ -33,7 +35,7 @@ const App = () => {
     return <PrivateDrawer />;
   }
 
-  return <PublicNavigation />;
+  return <PrivateDrawer />;
 };
 
 export default App;

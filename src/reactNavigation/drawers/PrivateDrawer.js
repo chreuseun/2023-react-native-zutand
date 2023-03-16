@@ -21,13 +21,12 @@ const Drawer = createDrawerNavigator();
 const PrivateDrawer = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator
-        backBehavior="none"
-        drawerContent={PrivateDrawerItems}
-        initialRouteName={HOME_SCREEN}>
+      <Drawer.Navigator>
         <Drawer.Screen name={HOME_SCREEN} component={HomeScreen} />
-        <Drawer.Screen name={DASHBOARD_SCREEN} component={DashboardScreen} />
         <Drawer.Screen name={ALERTS_SCREEN} component={AlertsScreen} />
+        {/* <Drawer.Screen name={HOME_SCREEN} component={HomeScreen} /> */}
+        {/* <Drawer.Screen name={DASHBOARD_SCREEN} component={DashboardScreen} />
+        <Drawer.Screen name={ALERTS_SCREEN} component={AlertsScreen} /> */}
       </Drawer.Navigator>
     </NavigationContainer>
   );
